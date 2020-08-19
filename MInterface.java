@@ -17,18 +17,18 @@ public class MInterface extends JFrame{
 	public MInterface() {}
 	void startup() {    
 		
-        Font headfont = new Font("Î¢ÈíÑÅºÚ",Font.BOLD,22);
-        Font textfont = new Font("Î¢ÈíÑÅºÚ",Font.BOLD,12);
+        Font headfont = new Font("å¾®è½¯é›…é»‘",Font.BOLD,22);
+        Font textfont = new Font("å¾®è½¯é›…é»‘",Font.BOLD,12);
 		
 		//MainInterface
     	
-		setTitle("ÓÃ»§µÇÂ¼");
-		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();// »ñµÃÆÁÄ»³ß´ç
+		setTitle("ç”¨æˆ·ç™»å½•");
+		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();// è·å¾—å±å¹•å°ºå¯¸
 		int width = 800;// The application's width
 		int height = 600;
 		int x = (d.width - width) / 2;
 		int y = (d.height - height) / 2;
-		setBounds((d.width - width) / 2, (d.height - height) / 2, width, height);// ´°¿ÚµÄ×ø±êºÍ³ß´ç£¬ÕâÖÖ·½Ê½¾ÓÖĞ
+		setBounds((d.width - width) / 2, (d.height - height) / 2, width, height);// çª—å£çš„åæ ‡å’Œå°ºå¯¸ï¼Œè¿™ç§æ–¹å¼å±…ä¸­
 
 
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -37,7 +37,7 @@ public class MInterface extends JFrame{
         addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				int option = JOptionPane.showConfirmDialog(null, "È·¶¨ÍË³öÏµÍ³? ", "ÌáÊ¾ ", JOptionPane.YES_NO_OPTION);
+				int option = JOptionPane.showConfirmDialog(null, "ç¡®å®šé€€å‡ºç³»ç»Ÿ? ", "æç¤º ", JOptionPane.YES_NO_OPTION);
 				
 				if (option == JOptionPane.YES_OPTION)
 					dispose();
@@ -55,13 +55,13 @@ public class MInterface extends JFrame{
         
        
         //headText
-        JLabel headText = new JLabel("½ÌÎñÏµÍ³µÇÂ¼");
+        JLabel headText = new JLabel("æ•™åŠ¡ç³»ç»Ÿç™»å½•");
         headText.setBounds(305,100,200,100);
         headText.setFont(headfont);
         mainpanel.add(headText);
         
         //userLabel
-        JLabel userLabel = new JLabel("ÓÃ»§Ãû");
+        JLabel userLabel = new JLabel("ç”¨æˆ·å");
         userLabel.setBounds(220,200,80,25);
         userLabel.setFont(textfont);
         mainpanel.add(userLabel);   
@@ -72,7 +72,7 @@ public class MInterface extends JFrame{
         mainpanel.add(userText);
         
         //passwordLabel
-        JLabel passwordLabel = new JLabel("ÃÜÂë");
+        JLabel passwordLabel = new JLabel("å¯†ç ");
         passwordLabel.setBounds(220,230,80,25);
         passwordLabel.setFont(textfont);
         mainpanel.add(passwordLabel);
@@ -84,7 +84,7 @@ public class MInterface extends JFrame{
         mainpanel.add(passwordText);
         
         //loginButton
-        JButton loginButton = new JButton("µÇÂ¼");
+        JButton loginButton = new JButton("ç™»å½•");
         loginButton.setBounds(270,280,80,25);
         loginButton.setFont(textfont);
         mainpanel.add(loginButton);
@@ -103,7 +103,7 @@ public class MInterface extends JFrame{
 				
 				//empty username or passwd
 				if(username == null || username.isEmpty() || password == null || password.isEmpty()) {
-					JOptionPane.showMessageDialog(null,"ÇëÊäÈëÍêÕûĞÅÏ¢£¡","ÌáÊ¾",JOptionPane.WARNING_MESSAGE); 
+					JOptionPane.showMessageDialog(null,"è¯·è¾“å…¥å®Œæ•´ä¿¡æ¯ï¼","æç¤º",JOptionPane.WARNING_MESSAGE); 
 				}
 				
 				else {
@@ -113,7 +113,7 @@ public class MInterface extends JFrame{
 	
 					//invalid username 
 					if(!isStudent(usernameValue) && !isProfessor(usernameValue) && !isAdmin(usernameValue)) {
-						JOptionPane.showMessageDialog(null,"ÓÃ»§Ãû²»´æÔÚ£¡","ÌáÊ¾",JOptionPane.WARNING_MESSAGE); 
+						JOptionPane.showMessageDialog(null,"ç”¨æˆ·åä¸å­˜åœ¨ï¼","æç¤º",JOptionPane.WARNING_MESSAGE); 
 					}
 					
 					
@@ -139,7 +139,7 @@ public class MInterface extends JFrame{
 						//username and passwd not match
 						else {
 						
-							JOptionPane.showMessageDialog(null,"ÃÜÂë²»ÕıÈ·£¡","ÌáÊ¾",JOptionPane.WARNING_MESSAGE); 
+							JOptionPane.showMessageDialog(null,"å¯†ç ä¸æ­£ç¡®ï¼","æç¤º",JOptionPane.WARNING_MESSAGE); 
 						}
 					}
 				}
@@ -151,8 +151,8 @@ public class MInterface extends JFrame{
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
 				JButton btn = (JButton) e.getComponent();
-				btn.setBorderPainted(true);// ÏÔÊ¾±ß¿ò
-				btn.setForeground(new Color(0x33, 0x66, 0xcc));// ÉèÖÃ×ÖÌåÑÕÉ«
+				btn.setBorderPainted(true);// æ˜¾ç¤ºè¾¹æ¡†
+				btn.setForeground(new Color(0x33, 0x66, 0xcc));// è®¾ç½®å­—ä½“é¢œè‰²
 				btn.setBorder(BorderFactory.createLoweredBevelBorder());
 				btn.setRolloverEnabled(true);
 			}
@@ -161,8 +161,8 @@ public class MInterface extends JFrame{
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				JButton btn = (JButton) e.getComponent();
-				btn.setForeground(new Color(0x33, 0x66, 0xcc));// ÉèÖÃ×ÖÌåÑÕÉ«
-				btn.setBorderPainted(true);// ÏÔÊ¾±ß¿ò
+				btn.setForeground(new Color(0x33, 0x66, 0xcc));// è®¾ç½®å­—ä½“é¢œè‰²
+				btn.setBorderPainted(true);// æ˜¾ç¤ºè¾¹æ¡†
 				btn.setBorder(BorderFactory.createRaisedBevelBorder());
 				btn.setRolloverEnabled(true);
 			}
@@ -171,15 +171,15 @@ public class MInterface extends JFrame{
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				JButton btn = (JButton) e.getComponent();
-				btn.setForeground(Color.blue);// ÉèÖÃ×ÖÌåÑÕÉ«
-				btn.setBorderPainted(false);// Òş²Ø±ß¿ò
+				btn.setForeground(Color.blue);// è®¾ç½®å­—ä½“é¢œè‰²
+				btn.setBorderPainted(false);// éšè—è¾¹æ¡†
 				
 			}
         });
         
         
         //forgotPasswordButton        
-        JButton forgotPassword = new JButton("Íü¼ÇÃÜÂë");
+        JButton forgotPassword = new JButton("å¿˜è®°å¯†ç ");
         forgotPassword.setBounds(370,280,100,25);
         forgotPassword.setFont(textfont);
         mainpanel.add(forgotPassword);
@@ -192,13 +192,13 @@ public class MInterface extends JFrame{
 			public void mouseClicked(MouseEvent e) {
 				
 				//change-password frame
-				JFrame changepswd = new JFrame("Íü¼ÇÃÜÂë");
-				Dimension d = Toolkit.getDefaultToolkit().getScreenSize();// »ñµÃÆÁÄ»³ß´ç
+				JFrame changepswd = new JFrame("å¿˜è®°å¯†ç ");
+				Dimension d = Toolkit.getDefaultToolkit().getScreenSize();// è·å¾—å±å¹•å°ºå¯¸
 				int width = 800;// The application's width
 				int height = 600;
 				int x = (d.width - width) / 2;
 				int y = (d.height - height) / 2;
-				changepswd.setBounds((d.width - width) / 2, (d.height - height) / 2, width, height);// ´°¿ÚµÄ×ø±êºÍ³ß´ç£¬ÕâÖÖ·½Ê½¾ÓÖĞ
+				changepswd.setBounds((d.width - width) / 2, (d.height - height) / 2, width, height);// çª—å£çš„åæ ‡å’Œå°ºå¯¸ï¼Œè¿™ç§æ–¹å¼å±…ä¸­
 
 		        //changepswd.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 				changepswd.setResizable(false);
@@ -211,31 +211,31 @@ public class MInterface extends JFrame{
 		        pswdpanel.setLayout(null);
 		        
 		        //headText
-		        JLabel headText = new JLabel("ĞŞ¸ÄÃÜÂë");
+		        JLabel headText = new JLabel("ä¿®æ”¹å¯†ç ");
 		        headText.setBounds(330,50,200,100);
 		        headText.setFont(headfont);
 		        pswdpanel.add(headText);
 		        
 		        //usernameLabel
-		        JLabel usernameLabel = new JLabel("ÓÃ»§Ãû");
+		        JLabel usernameLabel = new JLabel("ç”¨æˆ·å");
 		        usernameLabel.setBounds(250,150,80,25);
 		        usernameLabel.setFont(textfont);
 		        pswdpanel.add(usernameLabel);   
 		        
 		        //oldlabel
-				JLabel oldlabel = new JLabel("¾ÉÃÜÂë");
+				JLabel oldlabel = new JLabel("æ—§å¯†ç ");
 				oldlabel.setBounds(250, 190, 80, 25);
 				oldlabel.setFont(textfont);
 				pswdpanel.add(oldlabel);
 
 				//newlabel
-				JLabel newlabel = new JLabel("ĞÂÃÜÂë");
+				JLabel newlabel = new JLabel("æ–°å¯†ç ");
 				newlabel.setBounds(250, 230, 80, 25);
 				newlabel.setFont(textfont);
 				pswdpanel.add(newlabel);
 				
 				//confirmlabel
-				JLabel confirmlabel = new JLabel("È·ÈÏÃÜÂë");
+				JLabel confirmlabel = new JLabel("ç¡®è®¤å¯†ç ");
 				confirmlabel.setBounds(240, 270, 80, 25);
 				confirmlabel.setFont(textfont);
 				pswdpanel.add(confirmlabel);
@@ -264,7 +264,7 @@ public class MInterface extends JFrame{
 				
 				
 				//confirmbutton
-				JButton confirmbutton = new JButton("È·¶¨");
+				JButton confirmbutton = new JButton("ç¡®å®š");
 				confirmbutton.setBounds(290,330,80,25);
 				confirmbutton.setFont(textfont);
 				pswdpanel.add(confirmbutton);
@@ -288,7 +288,7 @@ public class MInterface extends JFrame{
 						String confirmpassword = new String(confirmpswd.getPassword());
 						
 						if(username == null || username.isEmpty() || oldpassword == null || oldpassword.isEmpty()) {
-							JOptionPane.showMessageDialog(null,"ÇëÊäÈëÍêÕûĞÅÏ¢£¡","ÌáÊ¾",JOptionPane.WARNING_MESSAGE); 
+							JOptionPane.showMessageDialog(null,"è¯·è¾“å…¥å®Œæ•´ä¿¡æ¯ï¼","æç¤º",JOptionPane.WARNING_MESSAGE); 
 						}
 						
 						else {
@@ -298,16 +298,16 @@ public class MInterface extends JFrame{
 			
 							//invalid username 
 							if(!isStudent(usernameValue) && !isProfessor(usernameValue) && !isAdmin(usernameValue)) {
-								JOptionPane.showMessageDialog(null,"ÓÃ»§Ãû²»´æÔÚ£¡","ÌáÊ¾",JOptionPane.WARNING_MESSAGE); 
+								JOptionPane.showMessageDialog(null,"ç”¨æˆ·åä¸å­˜åœ¨ï¼","æç¤º",JOptionPane.WARNING_MESSAGE); 
 							}
 							else {
 
 								if(changePassword(username,oldpassword,newpassword,confirmpassword)==true) {
-									JOptionPane.showMessageDialog(null,"ĞŞ¸ÄÃÜÂë³É¹¦£¡","ÌáÊ¾",JOptionPane.INFORMATION_MESSAGE);
+									JOptionPane.showMessageDialog(null,"ä¿®æ”¹å¯†ç æˆåŠŸï¼","æç¤º",JOptionPane.INFORMATION_MESSAGE);
 									changepswd.dispose();
 								}
 								else {
-									JOptionPane.showMessageDialog(null,"ĞŞ¸ÄÃÜÂëÊ§°Ü£ºÓÃ»§ÃûÓĞĞ§","ÌáÊ¾",JOptionPane.WARNING_MESSAGE); 
+									JOptionPane.showMessageDialog(null,"ä¿®æ”¹å¯†ç å¤±è´¥ï¼šç”¨æˆ·åæœ‰æ•ˆ","æç¤º",JOptionPane.WARNING_MESSAGE); 
 								}
 							}
 						}
@@ -322,8 +322,8 @@ public class MInterface extends JFrame{
 					@Override
 					public void mousePressed(MouseEvent e) {
 						JButton btn = (JButton) e.getComponent();
-						btn.setBorderPainted(true);// ÏÔÊ¾±ß¿ò
-						btn.setForeground(new Color(0x33, 0x66, 0xcc));// ÉèÖÃ×ÖÌåÑÕÉ«
+						btn.setBorderPainted(true);// æ˜¾ç¤ºè¾¹æ¡†
+						btn.setForeground(new Color(0x33, 0x66, 0xcc));// è®¾ç½®å­—ä½“é¢œè‰²
 						btn.setBorder(BorderFactory.createLoweredBevelBorder());
 						btn.setRolloverEnabled(true);
 					}
@@ -331,9 +331,9 @@ public class MInterface extends JFrame{
 					@Override
 					public void mouseEntered(MouseEvent e) {
 						JButton btn = (JButton) e.getComponent();
-						btn.setForeground(new Color(0x33, 0x66, 0xcc));// ÉèÖÃ×ÖÌåÑÕÉ«
-						btn.setBorderPainted(true);// ÏÔÊ¾±ß¿ò
-						Border etchedBorder = new EtchedBorder(EtchedBorder.LOWERED);// ÉèÖÃ±ß¿ò°¼ÏÔ
+						btn.setForeground(new Color(0x33, 0x66, 0xcc));// è®¾ç½®å­—ä½“é¢œè‰²
+						btn.setBorderPainted(true);// æ˜¾ç¤ºè¾¹æ¡†
+						Border etchedBorder = new EtchedBorder(EtchedBorder.LOWERED);// è®¾ç½®è¾¹æ¡†å‡¹æ˜¾
 						btn.setBorder(etchedBorder);
 						btn.setRolloverEnabled(true);
 					}
@@ -341,7 +341,7 @@ public class MInterface extends JFrame{
 					@Override
 					public void mouseExited(MouseEvent e) {
 						JButton btn = (JButton) e.getComponent();
-						btn.setForeground(Color.blue);// ÉèÖÃ×ÖÌåÑÕÉ«
+						btn.setForeground(Color.blue);// è®¾ç½®å­—ä½“é¢œè‰²
 						btn.setBorder(BorderFactory.createEtchedBorder());
 						btn.setBorderPainted(true);
 					}
@@ -350,7 +350,7 @@ public class MInterface extends JFrame{
 				
 				
 				//cancelbutton
-				JButton cancelbutton = new JButton("È¡Ïû");
+				JButton cancelbutton = new JButton("å–æ¶ˆ");
 				cancelbutton.setBounds(400,330,80,25);
 				cancelbutton.setFont(textfont);
 				pswdpanel.add(cancelbutton);
@@ -363,7 +363,7 @@ public class MInterface extends JFrame{
 					public void mouseClicked(MouseEvent e) {
 						super.mouseEntered(e);
 						JButton btn = (JButton) e.getComponent();
-						btn.setBorderPainted(true);// ÏÔÊ¾±ß¿ò
+						btn.setBorderPainted(true);// æ˜¾ç¤ºè¾¹æ¡†
 						btn.setBorder(BorderFactory.createLoweredBevelBorder());
 
 						changepswd.dispose();
@@ -373,8 +373,8 @@ public class MInterface extends JFrame{
 					@Override
 					public void mousePressed(MouseEvent e) {
 						JButton btn = (JButton) e.getComponent();
-						btn.setBorderPainted(true);// ÏÔÊ¾±ß¿ò
-						btn.setForeground(new Color(0x33, 0x66, 0xcc));// ÉèÖÃ×ÖÌåÑÕÉ«
+						btn.setBorderPainted(true);// æ˜¾ç¤ºè¾¹æ¡†
+						btn.setForeground(new Color(0x33, 0x66, 0xcc));// è®¾ç½®å­—ä½“é¢œè‰²
 						btn.setBorder(BorderFactory.createLoweredBevelBorder());
 						btn.setRolloverEnabled(true);
 					}
@@ -383,9 +383,9 @@ public class MInterface extends JFrame{
 					public void mouseEntered(MouseEvent e) {
 						// TODO Auto-generated method stub
 						JButton btn = (JButton) e.getComponent();
-						btn.setForeground(new Color(0x33, 0x66, 0xcc));// ÉèÖÃ×ÖÌåÑÕÉ«
-						btn.setBorderPainted(true);// ÏÔÊ¾±ß¿ò
-						Border etchedBorder = new EtchedBorder(EtchedBorder.LOWERED);// ÉèÖÃ±ß¿ò°¼ÏÔ
+						btn.setForeground(new Color(0x33, 0x66, 0xcc));// è®¾ç½®å­—ä½“é¢œè‰²
+						btn.setBorderPainted(true);// æ˜¾ç¤ºè¾¹æ¡†
+						Border etchedBorder = new EtchedBorder(EtchedBorder.LOWERED);// è®¾ç½®è¾¹æ¡†å‡¹æ˜¾
 						btn.setBorder(etchedBorder);
 						btn.setRolloverEnabled(true);
 					}
@@ -394,7 +394,7 @@ public class MInterface extends JFrame{
 					public void mouseExited(MouseEvent e) {
 						// TODO Auto-generated method stub
 						JButton btn = (JButton) e.getComponent();
-						btn.setForeground(Color.blue);// ÉèÖÃ×ÖÌåÑÕÉ«
+						btn.setForeground(Color.blue);// è®¾ç½®å­—ä½“é¢œè‰²
 
 						btn.setBorder(BorderFactory.createEtchedBorder());
 						btn.setBorderPainted(true);
@@ -410,8 +410,8 @@ public class MInterface extends JFrame{
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
 				JButton btn = (JButton) e.getComponent();
-				btn.setBorderPainted(true);// ÏÔÊ¾±ß¿ò
-				btn.setForeground(new Color(0x33, 0x66, 0xcc));// ÉèÖÃ×ÖÌåÑÕÉ«
+				btn.setBorderPainted(true);// æ˜¾ç¤ºè¾¹æ¡†
+				btn.setForeground(new Color(0x33, 0x66, 0xcc));// è®¾ç½®å­—ä½“é¢œè‰²
 				btn.setBorder(BorderFactory.createLoweredBevelBorder());
 				btn.setRolloverEnabled(true);
 			}
@@ -420,8 +420,8 @@ public class MInterface extends JFrame{
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				JButton btn = (JButton) e.getComponent();
-				btn.setForeground(new Color(0x33, 0x66, 0xcc));// ÉèÖÃ×ÖÌåÑÕÉ«
-				btn.setBorderPainted(true);// ÏÔÊ¾±ß¿ò
+				btn.setForeground(new Color(0x33, 0x66, 0xcc));// è®¾ç½®å­—ä½“é¢œè‰²
+				btn.setBorderPainted(true);// æ˜¾ç¤ºè¾¹æ¡†
 				btn.setBorder(BorderFactory.createRaisedBevelBorder());
 				btn.setRolloverEnabled(true);
 			}
@@ -430,8 +430,8 @@ public class MInterface extends JFrame{
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				JButton btn = (JButton) e.getComponent();
-				btn.setForeground(Color.blue);// ÉèÖÃ×ÖÌåÑÕÉ«
-				btn.setBorderPainted(false);// Òş²Ø±ß¿ò
+				btn.setForeground(Color.blue);// è®¾ç½®å­—ä½“é¢œè‰²
+				btn.setBorderPainted(false);// éšè—è¾¹æ¡†
 				
 			}
         });
@@ -451,10 +451,10 @@ public class MInterface extends JFrame{
 		int id = Integer.parseInt(username);
 		if(passwordMatch(username, oldpassword)&&newpassword.equals(confirmpassword)) {
 			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");// System.out.println("Çı¶¯¼ÓÔØ³É¹¦");
+				Class.forName("com.mysql.cj.jdbc.Driver");// System.out.println("é©±åŠ¨åŠ è½½æˆåŠŸ");
 				Connection conn = DriverManager.getConnection(
 						"jdbc:mysql://127.12.216.221:3306/test?useSSL=false&serverTimezone=UTC", "root", "123456");
-				// System.out.println("Êı¾İ¿âÁ¬½Ó³É¹¦");
+				// System.out.println("æ•°æ®åº“è¿æ¥æˆåŠŸ");
 				Statement statement = conn.createStatement();
 				String sql ="select *from student where StuID="+id+" and StuPassword='"+oldpassword+"'";
 				//System.out.println(sql);
@@ -470,15 +470,15 @@ public class MInterface extends JFrame{
 				flag=true;
 			if(id==2&&oldpassword.equals("000000"))
 			     flag=true;
-			if(rowcount1>0) {//ËµÃ÷ÊäÈëµÄÕËºÅºÍÃÜÂëÊÇÑ§Éú¶ËµÄ
+			if(rowcount1>0) {//è¯´æ˜è¾“å…¥çš„è´¦å·å’Œå¯†ç æ˜¯å­¦ç”Ÿç«¯çš„
 				 sql = "update student set StuPassword='"+newpassword+"'"+" where  StuID="+id;
 				 statement.execute(sql);
 			}
-			if(rowcount2>0) {//ËµÃ÷ÊäÈëµÄÕËºÅºÍÃÜÂëÊÇ½ÌÊÚ¶ËµÄ
+			if(rowcount2>0) {//è¯´æ˜è¾“å…¥çš„è´¦å·å’Œå¯†ç æ˜¯æ•™æˆç«¯çš„
 				sql = "update professor set Propassword='"+newpassword+"'"+" where ProID="+id;
 				statement.execute(sql);
 			}
-			if(flag==true) {//ËµÃ÷ÊäÈëµÄÕËºÅºÍÃÜÂëÊÇ¹ÜÀíÔ±¶ËµÄ
+			if(flag==true) {//è¯´æ˜è¾“å…¥çš„è´¦å·å’Œå¯†ç æ˜¯ç®¡ç†å‘˜ç«¯çš„
 				return false;
 			}
 			}
@@ -499,10 +499,10 @@ public class MInterface extends JFrame{
 		boolean flag=false;
 		int id = Integer.parseInt(username);
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");// System.out.println("Çı¶¯¼ÓÔØ³É¹¦");
+			Class.forName("com.mysql.cj.jdbc.Driver");// System.out.println("é©±åŠ¨åŠ è½½æˆåŠŸ");
 			Connection conn = DriverManager.getConnection(
 					"jdbc:mysql://127.12.216.221:3306/test?useSSL=false&serverTimezone=UTC", "root", "123456");
-			// System.out.println("Êı¾İ¿âÁ¬½Ó³É¹¦");
+			// System.out.println("æ•°æ®åº“è¿æ¥æˆåŠŸ");
 			Statement statement = conn.createStatement();
 			String sql ="select *from student where StuID="+id+" and StuPassword='"+password+"'";
 			//System.out.println(sql);
@@ -537,7 +537,7 @@ public class MInterface extends JFrame{
 
 
 	private boolean isStudent(int usernum) {
-		if(usernum >= 21100000 && usernum <= 21200000) //»á²»»áÌ«¼òµ¥´Ö±©ÁË£¨?
+		if(usernum >= 21100000 && usernum <= 21200000) 
 			return true;
 		else 
 			return false;
